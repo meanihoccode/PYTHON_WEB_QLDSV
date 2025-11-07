@@ -28,6 +28,8 @@ tải ở https://ollama.com/download
 tiếp đó pip install ollama
 mở CMD ollama serve
 ollama pull llama3:instruct -->
+data mẫu:
+python -m backend.db.seed_data
 
 chạy:
 # 1. Tạo virtual env (khuyến nghị)
@@ -61,6 +63,6 @@ uvicorn backend.main:app --reload
 3. Thêm key vào file `.env`
 4. Tạo JWT secret: `python -c "import secrets; print(secrets.token_urlsafe(32))"`
 
-📖 Xem chi tiết: [SECURITY.md](SECURITY.md)
+
 
 
