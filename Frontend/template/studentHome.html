@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống quản lý sinh viên</title>
+    <link rel="stylesheet" href="/static/studentHome.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- THÊM DÒNG NÀY -->
+    <script src="/static/login.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <!-- Header -->
+    <header class="header">
+        <div class="logo" id="system-name">Hệ thống quản lý sinh viên</div>
+        <div class="header-buttons">
+            <button class="edit-profile-btn" onclick="editProfile()">Chỉnh sửa thông tin</button>
+            <button class="logout-btn" onclick="logout()">Đăng xuất</button>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="profile-section">
+            <div class="avatar">👨‍🎓</div>
+            <div class="student-info">
+                <div class="info-item"><span class="info-label">Họ tên:</span> <span class="info-value" id="student-name">Nguyễn Văn An</span></div>
+                <div class="info-item"><span class="info-label">Mã SV:</span> <span class="info-value" id="student-id">SV001234</span></div>
+                <div class="info-item"><span class="info-label">Ngày sinh:</span> <span class="info-value" id="birth-date">15/03/2002</span></div>
+            </div>
+            <div class="join-class-container">
+                <input class="code-input" placeholder="Nhập mã vào lớp">
+                <button class="join-class-button" onclick="
+                    JoinClass()">Tham gia lớp</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+        <div class="content-header">
+            <h1 class="page-title">Danh sách lớp học</h1>
+        </div>
+
+        <div class="classes-grid" id="classes-grid">
+            <!-- JS sinh lớp học tại đây -->
+        </div>
+
+        <!-- Bảng điểm -->
+        <section class="score-section" id="score-section" style="display:none;">
+            <h2 class="section-title" id="score-title">📊 Điểm môn học</h2>
+            <table class="score-table">
+                <thead>
+                    <tr>
+                        <th>Môn học</th>
+                        <th>Chuyên cần</th>
+                        <th>Giữa kỳ</th>
+                        <th>Cuối kỳ</th>
+                        <th>Trung bình</th>
+                    </tr>
+                </thead>
+                <tbody id="score-table-body"></tbody>
+            </table>
+        </section>
+
+        <!-- Biểu đồ -->
+        <section class="chart-section" id="chart-section" style="display:none;">
+            <h2 class="section-title">📈 Biểu đồ điểm môn học</h2>
+            <canvas id="scoreChart" width="400" height="200"></canvas>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        © 2025 Hệ thống quản lý sinh viên. Phát triển bởi NHÓM 17.
+    </footer>
+</div>
+
+<script src="/static/studentHome.js"></script>
+<!-- Thêm Chatbot CSS -->
+<link rel="stylesheet" href="/static/chatbot.css">
+
+<!-- Thêm Chatbot JS -->
+<script src="/static/chatbot.js"></script>
+</body>
+</html>
